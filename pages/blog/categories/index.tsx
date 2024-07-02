@@ -7,12 +7,13 @@ import AppHead from "@/components/AppHead";
 import SkipToMain from "@/components/SkipToMain";
 import SocialLinks from "@/components/SocialLinks";
 import BlogHeader from "@/components/blog/BlogHeader";
-import BlogCardBox from "@/components/BlogCardBox";
+// import BlogCardBox from "@/components/BlogCardBox";
 import Footer from "@/components/Footer";
 import Loader from "@/components/Loader";
 import { getAllPosts } from "utils/api";
 import slugify from "utils/slugify";
 import { MdxMeta } from "../posts/[slug]";
+import BlogCardBox from "../BlogCardBox";
 
 type CategorizedPosts = {
   [key: string]: {
@@ -88,8 +89,9 @@ const Blog: NextPage<Props> = ({ categories, categorizedPosts }) => {
                     </h2>
                   </Link>
                   <ul className="flex space-x-4 overflow-x-auto overflow-y-hidden snap-x touch-auto">
-                    {categorizedPosts[category].map((post: any) => (
-                      <BlogCardBox post={post} key={post.slug} />
+                    {categorizedPosts[category].map((post: any,index) => (
+                      // <BlogCardBox post={post} key={post.slug} />
+                      <div key={index}></div>
                     ))}
                   </ul>
                 </div>
